@@ -5,6 +5,7 @@ const movieSchema = new mongoose.Schema({
   rating: { type: Number, required: true },
   year: { type: Number, required: true },
   img: { type: String, required: true },
+  video: { type: String, required: true },
 });
 
 module.exports = mongoose.model("Movie", movieSchema);
