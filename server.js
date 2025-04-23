@@ -34,8 +34,8 @@ app.post("/register-movies", async (req, res) => {
 });
 app.get("/all-Movies", async (req, res) => {
   try {
-    const course = await Course.find();
-    res.json(course);
+    const Movies = await Movie.find();
+    res.json(Movies);
   } catch (error) {
     res.status(502).json({ message: "error in getting course", error });
   }
