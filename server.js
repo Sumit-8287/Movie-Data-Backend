@@ -105,9 +105,9 @@ app.post("/register-tvshows", async (req, res) => {
   }
 });
 
-app.get("/all-Tvshow", async (req, res) => {
+app.get("/all-tvshow", async (req, res) => {
   try {
-    const shows = await TVShow.find();
+    const shows = await TvShows.find();
     res.status(200).json(shows);
   } catch (error) {
     res.status(500).json({ error: error.message });
