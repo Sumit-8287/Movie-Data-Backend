@@ -16,7 +16,10 @@ const app = express();
 connectDB();
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: [
+      "http://localhost:5173",
+      "https://moviedatabase77.netlify.app/login",
+    ],
     credentials: true,
   })
 );
