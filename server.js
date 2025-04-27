@@ -16,10 +16,7 @@ const app = express();
 connectDB();
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173",
-      "https://moviedatabase77.netlify.app",
-    ],
+    origin: ["http://localhost:5173", "https://moviedatabase77.netlify.app"],
     credentials: true,
   })
 );
@@ -193,11 +190,9 @@ app.post("/login", async (req, res) => {
     }
 
     // Generate JWT Token
-    const token = jwt.sign(
-      { userId: user._id, email: user.email, role: user.role },
-      process.env.JWT_SECRET,
-      { expiresIn: "1d" }
-    );
+    const token = jwt.sign({ email: user.email }, process.env.JWT_SECRET, {
+      expiresIn: "1d",
+    });
 
     // Return user info and token
     res.status(200).json({
