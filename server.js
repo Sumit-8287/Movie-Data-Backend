@@ -18,7 +18,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://moviedatabase77.netlify.app/login",
+      "https://moviedatabase77.netlify.app",
     ],
     credentials: true,
   })
